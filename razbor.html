@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Разбор карточек пекарни «Крендель»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Rubik:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--or:#E8611C;--or-d:#C64F12;--slate:#383F46;--pink:#F0CBC6;--pink-l:#FBEEEC;--paper:#FFFAF7;--card:#fff;--ink:#262B30;--muted:#6B6F74;--line:#EDE0DC;--ok:#2E8B57;--warn:#B87400;--bad:#C8402F;--glow:#FFE89A}
+*{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:clip}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Rubik,Manrope,sans-serif;letter-spacing:-.01em;line-height:1.12}
+a{color:inherit}
+.top{background:var(--slate);color:#d6d9dc;font-size:13px;padding:9px 0}
+.top a{color:#fff;font-weight:700}
+header.hero{padding:46px 0 26px}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--or-d)}
+header h1{font-size:clamp(30px,5vw,48px);font-weight:800;margin:12px 0 14px;color:var(--slate)}
+header h1 span{color:var(--or)}
+header p{font-size:18px;color:#3a3f44;max-width:62ch}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 8px}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.sc b{display:block;font-family:Rubik;font-size:32px;margin:4px 0}
+.sc small{color:var(--muted)}
+.sc.bad b{color:var(--bad)}.sc.ok b{color:var(--ok)}
+.compare{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:26px 0}
+.compare table{width:100%;border-collapse:collapse;font-size:15px}
+.compare th,.compare td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.compare th{background:#FCF6F3;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.compare tr:last-child td{border-bottom:0}
+.y{color:var(--ok);font-weight:600}.n{color:var(--bad);font-weight:600}
+h2{font-size:26px;font-weight:800;margin:44px 0 16px;color:var(--slate)}
+.find{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
+.find>*:not(.num){grid-column:2;min-width:0}
+.num{grid-column:1;grid-row:1/span 9;width:38px;height:38px;border-radius:10px;background:var(--slate);color:#fff;display:grid;place-items:center;font-family:Rubik;font-weight:700;font-size:16px}
+.find h3{font-size:18px;line-height:1.3;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.tag{font-family:Manrope;font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px}
+.tag.hi{background:#FDE7E3;color:var(--bad)}.tag.mid{background:#FFF1D6;color:var(--warn)}.tag.lo{background:#EEF0EC;color:#55605a}
+.find p{color:#3a3f44}
+.fix{background:#F1F9F4;border-radius:10px;padding:10px 12px;font-size:15px}
+.fix b{color:var(--ok)}
+.shot{display:block;margin-top:4px;border-radius:12px;border:1px solid var(--line);width:100%;max-width:380px;height:auto}
+.bars{display:grid;gap:8px;margin:4px 0}
+.bar{display:grid;grid-template-columns:minmax(0,190px) 1fr 30px;gap:10px;align-items:center;font-size:14px}
+.bar i{display:block;height:14px;border-radius:7px;background:var(--bad)}
+.bar b{text-align:right}
+.mini{width:100%;border-collapse:collapse;font-size:14px;margin:2px 0}
+.mini td,.mini th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+.mini th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.q{display:flex;flex-wrap:wrap;gap:6px}
+.q span{background:var(--pink-l);border:1px solid var(--pink);border-radius:99px;padding:4px 10px;font-size:14px}
+.offer{background:var(--slate);color:#fff;border-radius:24px;padding:30px;margin:44px 0 20px;position:relative;overflow:hidden}
+.offer:before{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;background:var(--pink);opacity:.18;transform:rotate(45deg)}
+.offer h2{margin:0 0 12px;color:#fff}
+.offer ul{list-style:none;display:grid;gap:8px;margin:14px 0 20px}
+.offer li{padding-left:26px;position:relative}
+.offer li:before{content:"";position:absolute;left:0;top:6px;width:14px;height:14px;border-radius:4px;background:var(--or)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:12px;font-weight:700;text-decoration:none;background:var(--or);color:#fff}
+.btn.o{background:transparent;border:2px solid #fff;color:#fff}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+footer{padding:20px 0 50px;color:var(--muted);font-size:14px}
+@media (max-width:640px){.wrap{padding:0 16px}.score{grid-template-columns:1fr}.find{grid-template-columns:1fr;padding:18px 16px}.find>*:not(.num){grid-column:1}.num{grid-row:auto}.compare{overflow-x:auto}.compare table{min-width:540px}.offer{padding:22px 18px}.bar{grid-template-columns:minmax(0,130px) 1fr 24px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">Разбор подготовил Александр Ли для пекарни «Крендель», 28 октября 2026 · <a href="index.html">Концепт сайта →</a></div></div>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">«Крендель», пекарня-кондитерская · Героя Яцкова, 9 к3</span>
+  <h1>В Яндексе у вас 4,9, в 2ГИС 4,4. <span>Разница в жалобах, на которые никто не ответил</span></h1>
+  <p>Посмотрел, как пекарня выглядит в 2ГИС и Яндекс Картах. Выпечку и торты хвалят, в Яндексе 330 оценок и 4,9. А в 2ГИС рейтинг 4,4, и тянут его вниз 15 недовольных отзывов, на большинство из которых нет ответа. Это исправляется: ответами и тем, чтобы довольные покупатели оставляли оценку и в 2ГИС.</p>
+  <div class="score">
+    <div class="sc bad"><small>Рейтинг в 2ГИС</small><b>4,4</b><small>114 оценок, 102 отзыва</small></div>
+    <div class="sc bad"><small>Ответов в 2026 году</small><b>0</b><small>на 4 жалобы и 7 благодарностей</small></div>
+    <div class="sc ok"><small>Рейтинг в Яндексе</small><b>4,9</b><small>330 оценок, но карточка ничья</small></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <div class="compare"><table>
+    <tr><th></th><th>2ГИС</th><th>Яндекс Карты</th></tr>
+    <tr><td>Рейтинг</td><td class="n">4,4 · 114 оценок</td><td class="y">4,9 · 330 оценок</td></tr>
+    <tr><td>Отзывы</td><td>102</td><td>142</td></tr>
+    <tr><td>Карточка подтверждена</td><td class="n">Плашка «Компания давно не обновляла данные»</td><td class="n">Нет, «Вы владелец этой организации?»</td></tr>
+    <tr><td>Ответы на отзывы</td><td class="n">5 из 48 последних, последний в ноябре 2025</td><td class="n">Нельзя, карточка не ваша</td></tr>
+    <tr><td>Часы работы</td><td>Ежедневно 9:00–21:00</td><td>До 21:00</td></tr>
+    <tr><td>Меню и цены</td><td>Есть, обновлено 23 мая 2026</td><td class="n">Есть, но цены другие</td></tr>
+    <tr><td>Сайт</td><td class="n">Нет</td><td class="n">Нет</td></tr>
+  </table></div>
+
+  <h2>Что нашёл</h2>
+
+  <div class="find"><span class="num">1</span>
+    <h3>Что тянет рейтинг в 2ГИС вниз <span class="tag hi">важно</span></h3>
+    <p>Из 48 последних отзывов 33 на пятёрку, четвёрок нет совсем, и 15 на 1–3 звезды. Разложил эти 15 по причинам:</p>
+    <div class="bars">
+      <div class="bar"><span>Продавец, тон и грубость</span><i style="width:100%"></i><b>7</b></div>
+      <div class="bar"><span>Несвежее или непропечённое</span><i style="width:57%"></i><b>4</b></div>
+      <div class="bar"><span>Мало начинки, дорого</span><i style="width:43%"></i><b>3</b></div>
+      <div class="bar"><span>Кофе</span><i style="width:14%"></i><b>1</b></div>
+    </div>
+    <p>Жалобы на продавца в основном 2024 и начала 2025 года. Все четыре жалобы 2026 года уже про продукт: начинка в круассане (март), десерт «Облако» с плесенью (апрель), сухие завитушки (май), сырое тесто в розочке (июль). Это не повод для паники, но видно, куда смотреть.</p>
+    <div class="fix"><b>Что сделать:</b> на свежесть отвечать делом и показывать это: дата и время на витрине и на сайте («вынесли в 9:40»). В концепте сайта сделал такую доску.</div>
+  </div>
+
+  <div class="find"><span class="num">2</span>
+    <h3>На жалобы 2026 года никто не ответил <span class="tag hi">важно</span></h3>
+    <p>Ответов всего 5 из 48 отзывов, последний в ноябре 2025. Отзыв про плесень в десерте висит без ответа с апреля, его читает каждый, кто открывает отзывы. На 33 благодарности тоже нет ни одного «спасибо». Когда жалоба без ответа, человек читает это как «им всё равно». Спокойный ответ с извинением и тем, что исправили, работает лучше любой рекламы, а бывает, что автор после ответа сам меняет оценку.</p>
+    <div class="fix"><b>Что сделать:</b> ответить на все 15 жалоб и поблагодарить за хорошие отзывы. Тексты подготовлю я, вы только одобряете. Дальше отвечать на новые в течение суток.</div>
+  </div>
+
+  <div class="find"><span class="num">3</span>
+    <h3>Сколько нужно, чтобы вернуть 4,5 и выше <span class="tag hi">важно</span></h3>
+    <p>Сейчас в 2ГИС 114 оценок со средним 4,4. Если считать по простой средней, чтобы выйти на 4,5, нужно примерно 23 новых пятёрки, на 4,6 около 60. Довольных покупателей у вас много: в Яндексе 330 оценок и 4,9. Они просто не доходят до 2ГИС, их никто не просит.</p>
+    <div class="fix"><b>Что сделать:</b> QR-код на кассе и на коробке торта «Оцените нас в 2ГИС», плюс просьба в MAX после заказа торта. Обычно это 5–10 отзывов в месяц, то есть 4,5 за 3–4 месяца. Сам расчёт примерный, у 2ГИС своя формула.</div>
+  </div>
+
+  <div class="find"><span class="num">4</span>
+    <h3>2ГИС пишет «Компания давно не обновляла данные», хотя вы обновляете <span class="tag mid">заметно</span></h3>
+    <p>Меню в 2ГИС обновлено 23 мая 2026, фото от владельца загружены в январе, мае и июне 2026. То есть доступ к кабинету у вас есть. Но данные не подтверждены, и каждый, кто открывает карточку, видит эту плашку. В разделе «Актуальность данных» тоже стоит «не подтверждена».</p>
+    <div class="fix"><b>Что сделать:</b> в кабинете 2ГИС нажать «Подтвердить данные». Бесплатно, 5 минут, и подтверждать раз в несколько месяцев.</div>
+  </div>
+
+  <div class="find"><span class="num">5</span>
+    <h3>На вашей карточке рекламируют торты конкурентов <span class="tag mid">заметно</span></h3>
+    <p>В блоке «Похожие организации» прямо под вашими часами работы три рекламных блока: «Хлебные истории» с доставкой, «Caramel desserts: торты на заказ к любому празднику» и «Белореченские торты: более 30 видов тортов в наличии и на заказ». То есть человеку, который пришёл к вам за тортом, предлагают заказать его у других.</p>
+    <div class="fix"><b>Что сделать:</b> заполненная карточка с ответами, ценами на торты и кнопкой «Заказать» перетягивает внимание. В платных пакетах 2ГИС можно убрать конкурентов со своей карточки, цену стоит уточнить отдельно.</div>
+  </div>
+
+  <div class="find"><span class="num">6</span>
+    <h3>Карточка в Яндекс Картах никому не принадлежит <span class="tag mid">заметно</span></h3>
+    <p>Там у вас 4,9 и 330 оценок, лучше, чем у многих соседей. Но висит «Вы владелец этой организации?», и вы не можете ни отвечать на отзывы, ни менять меню. В разборе отзывов от Яндекса тема «Торты» самая слабая: 77% положительных из 23 отзывов, против 95% у хлеба. В «Похожих местах» рядом показывают «Ваниль» со значком «Хорошее место 2026».</p>
+    <div class="fix"><b>Что сделать:</b> подтвердить карточку через Яндекс Бизнес. Бесплатно, нужен звонок или СМС на номер пекарни.</div>
+  </div>
+
+  <div class="find"><span class="num">7</span>
+    <h3>Цены в двух картах разные, и в меню есть ошибки <span class="tag mid">заметно</span></h3>
+    <p>Человек открывает 2ГИС и Яндекс и видит разные цены на одно и то же:</p>
+    <table class="mini">
+      <tr><th>Позиция</th><th>2ГИС, май 2026</th><th>Яндекс, октябрь</th></tr>
+      <tr><td>Синабон</td><td>125 ₽</td><td>195 ₽</td></tr>
+      <tr><td>Круассан (в 2ГИС «в ассортименте»)</td><td>150 ₽</td><td>240 ₽</td></tr>
+      <tr><td>Корзинка сырная</td><td>260 ₽</td><td>400 ₽</td></tr>
+      <tr><td>Батон или хлеб французский</td><td>77 ₽</td><td>120 ₽</td></tr>
+    </table>
+    <p>Откуда цены в Яндексе, по карточке не понять, возможно из доставки. В меню 2ГИС: «Чиабатта 28 ₽» (похоже на опечатку), «Круасанны», «французкий». Цены тортов в меню за 100 г, а на ваших фото-карточках тортов за килограмм, и у «Кренделя» они не сходятся: 175 ₽ за 100 г против 1 840 ₽ за кг. Одна покупательница уже написала злой отзыв про цену круассана.</p>
+    <img class="shot" src="img/shot-cards.jpg" alt="Фото-карточка тортов с ценой за килограмм из 2ГИС" loading="lazy">
+    <div class="fix"><b>Что сделать:</b> одно меню с одними ценами в обеих картах и на сайте. Торты с весом и ценой за кг, как на ваших карточках, они очень понятные.</div>
+  </div>
+
+  <div class="find"><span class="num">8</span>
+    <h3>На вопросы покупателей отвечает ИИ, а не вы <span class="tag lo">просто</span></h3>
+    <p>В «Вопросах о месте» в 2ГИС висят вопросы, на которые отвечает ИИ-помощник 2ГИС:</p>
+    <div class="q"><span>Когда обычно выносят свежий хлеб?</span><span>Есть ли торты на заказ?</span><span>Доставляют ли вашу выпечку?</span><span>Есть ли места посидеть внутри?</span><span>Большие ли очереди?</span><span>Есть ли безглютеновая выпечка?</span></div>
+    <div class="fix"><b>Что сделать:</b> ответить самим, коротко и по делу. Особенно про торты на заказ и свежий хлеб: это ровно то, что ищут люди перед покупкой.</div>
+  </div>
+
+  <div class="find"><span class="num">9</span>
+    <h3>Рубрик мало, снаружи почти нет фото <span class="tag lo">просто</span></h3>
+    <p>На витрине написано «Свежая выпечка, кофе с собой, торты, пирожные». В 2ГИС только две рубрики: «Пекарни» и «Кондитерские изделия». Яндекс считает вас ещё и кофейней. Из 50 фото в 2ГИС снаружи только 4, ваши последние фото фасада от декабря 2022, а одно из «уличных» вообще показывает просто жилой дом.</p>
+    <img class="shot" src="img/facade.jpg" alt="Фасад пекарни «Крендель»" loading="lazy">
+    <div class="fix"><b>Что сделать:</b> добавить рубрики «Торты на заказ» и «Кофе с собой», первым фото поставить вход с вывеской, как на этом снимке.</div>
+  </div>
+
+  <div class="offer">
+    <h2>Что предлагаю</h2>
+    <p>Беру на себя всё из списка: от вас нужно только подтвердить карточки по коду из СМС и одобрить ответы.</p>
+    <ul>
+      <li>Подтвердить карточки в 2ГИС и Яндексе, выставить одни часы, рубрики и одно меню с ценами</li>
+      <li>Ответить на все отзывы, начиная с жалоб, и дальше отвечать на новые</li>
+      <li>QR-код «Оцените нас» на кассу и на коробку торта, чтобы поднять 2ГИС до 4,5 и выше</li>
+      <li>Поставить хорошие фото: вход, зал, витрина, торты</li>
+      <li>Сайт пекарни со ссылкой из обеих карточек: <a href="index.html" style="color:#fff">вот концепт</a></li>
+      <li>Раз в месяц отчёт: рейтинг, новые отзывы, сколько людей посмотрели карточку, позвонили и построили маршрут</li>
+    </ul>
+    <p style="margin-bottom:18px">Разбор бесплатный. Стоимость работ обсудим, она небольшая.</p>
+    <div class="btns">
+      <a class="btn" href="https://t.me/DezmontDeXa" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn o" href="tel:+79147765705">+7 914 776-57-05</a>
+    </div>
+  </div>
+</main>
+<footer><div class="wrap">Данные из открытых карточек 2ГИС и Яндекс Карт на 28 октября 2026. Отзывы посчитаны по 48 последним в 2ГИС. Фото из карточки 2ГИС. Александр Ли.</div></footer>
+</body>
+</html>
